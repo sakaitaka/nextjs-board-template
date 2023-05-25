@@ -1,7 +1,7 @@
 version: "3"
 services:
   next:
-    image: node:16.13.0
+    image: node:lts-buster-slim
     command: sh -c "npm run dev"
     ports:
       - "3000:3000"
@@ -10,3 +10,5 @@ services:
     working_dir: /app
     stdin_open: true
     tty: true
+    environment:
+      - WATCHPACK_POLLING=true
